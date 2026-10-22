@@ -1,0 +1,8 @@
+title = "Semantic Notes Search"
+description = "Fine-tune a text encoder and search my notes by meaning."
+focus = "Start later with the selected corpus and keyword/pretrained retrieval baselines."
+notice = "Planned project: implementation, training and Colab recovery have not started."
+
+[[resources]]
+label = "Project plan"
+path = "README.md"

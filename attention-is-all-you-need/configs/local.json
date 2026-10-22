@@ -1,0 +1,32 @@
+{
+  "status": "proposed; config loader and model not implemented",
+  "profile": "local-cpu",
+  "task": "english-to-french",
+  "device": "cpu",
+  "precision": "float32",
+  "model": {
+    "encoder_layers": 1,
+    "decoder_layers": 1,
+    "embedding_dim": 32,
+    "attention_heads": 4,
+    "feed_forward_dim": 128,
+    "max_source_tokens": 32,
+    "max_target_tokens": 32,
+    "source_vocab_size": null,
+    "target_vocab_size": null
+  },
+  "data": {
+    "root": "data/",
+    "max_pairs": 128,
+    "tokenizer_contract": "pending; derive from video 2",
+    "split_and_license": "pending"
+  },
+  "training": {
+    "batch_size": 2,
+    "max_additional_updates": 20,
+    "max_session_minutes": 5,
+    "run_mode": null,
+    "run_id": null,
+    "run_root": "runs/"
+  }
+}

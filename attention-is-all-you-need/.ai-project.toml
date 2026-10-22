@@ -1,0 +1,74 @@
+title = "P00 · Translation Transformer"
+description = "My English-to-French Transformer project, following Priyam Mazumdar’s three videos."
+focus = "Video 1 is ready: launch Attention for worked examples and final outputs. Video 2 data preparation is next."
+notice = "Attention is implemented and checked on CPU. Tokenizer, data, training and translation files await the later videos."
+
+[labels]
+run = "Launch"
+setup = "Setup env"
+build = "Build pkg"
+test = "Tests"
+
+[[runners]]
+id = "attention"
+label = "1 · Attention"
+path = "attention.py"
+description = "Video 1: self-attention, multiple heads, padding and causal masks, cross-attention."
+
+[[runners]]
+id = "tokenizer"
+label = "2 · Tokenizer"
+path = "tokenizer.py"
+description = "Video 2: prepare the English and French tokenizers."
+
+[[runners]]
+id = "data"
+label = "2 · Prepare data"
+path = "prepare_data.py"
+description = "Video 2: prepare parallel text, shifted targets and batches."
+
+[[runners]]
+id = "train"
+label = "3 · Training"
+path = "train.py"
+description = "Video 3: train the translation model."
+
+[[runners]]
+id = "inference"
+label = "3 · Translation"
+path = "inference.py"
+description = "Video 3: translate English text into French."
+
+[[runners]]
+id = "bleu"
+label = "3 · BLEU evaluation"
+path = "compute_bleu.py"
+description = "Evaluate translations with BLEU."
+
+[[resources]]
+label = "Project"
+path = "README.md"
+
+[[resources]]
+label = "Sources and timestamps"
+path = "docs/SOURCES.md"
+
+[[resources]]
+label = "Running in Colab"
+path = "docs/COLAB.md"
+
+[[resources]]
+label = "Local profile"
+path = "configs/local.json"
+
+[[resources]]
+label = "Colab Free profile"
+path = "configs/colab-free.json"
+
+[[resources]]
+label = "Attention concept notebook"
+path = "attention_mechanism.ipynb"
+
+[[resources]]
+label = "Matrix and plot helpers"
+path = "attention_visuals.py"

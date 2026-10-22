@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "project_id": "support-ticket-router",
+  "phase": "boilerplate",
+  "profile": "local",
+  "data_download": false,
+  "training_enabled": false,
+  "dataset": {"id": "banking77", "acquired": false, "validation_fraction": 0.15},
+  "experiment": {
+    "tokenizers": ["word", "byte-bpe", "unigram"],
+    "embedding_methods": ["joint", "word2vec", "character-ngram"],
+    "classifier": "masked-mean-mlp",
+    "embedding_dim": 32,
+    "batch_size": 4,
+    "max_tokens": 64,
+    "seed": 42
+  },
+  "runtime": {"device": "cpu"},
+  "paths": {"data": "data/banking77", "runs": "runs", "checkpoints": "checkpoints", "artifacts": "artifacts"},
+  "recovery": {"persistent_storage": "local", "full_state_required": true}
+}

@@ -1,0 +1,36 @@
+{
+  "status": "proposed; hardware fit and hosted recovery unverified",
+  "profile": "colab-free",
+  "task": "english-to-french",
+  "device": "auto; CPU smoke required when GPU unavailable",
+  "precision": "float32",
+  "model": {
+    "encoder_layers": 2,
+    "decoder_layers": 2,
+    "embedding_dim": 64,
+    "attention_heads": 4,
+    "feed_forward_dim": 256,
+    "max_source_tokens": 64,
+    "max_target_tokens": 64,
+    "source_vocab_size": null,
+    "target_vocab_size": null
+  },
+  "data": {
+    "root": "data/",
+    "max_pairs": 10000,
+    "tokenizer_contract": "pending; derive from video 2",
+    "split_and_license": "pending"
+  },
+  "training": {
+    "batch_size": 8,
+    "max_additional_updates": 1000,
+    "max_session_minutes": 60,
+    "checkpoint_every_updates": 100,
+    "checkpoint_every_minutes": 5,
+    "retain_verified_generations": 2,
+    "run_mode": null,
+    "run_id": null,
+    "run_root": null,
+    "persistent_run_root_required": true
+  }
+}

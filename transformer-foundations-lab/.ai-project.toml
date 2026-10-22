@@ -1,0 +1,28 @@
+title = "P00 · Foundations lab"
+description = "Build the numerical, tokenizer and attention foundations for a small encoder–decoder Transformer."
+focus = "Continue Lesson 3 with numerical functions and known-answer checks. The saved prediction is the runnable starting point."
+notice = "Prediction setup is checked; numerical/model/training and learner gates remain separate."
+
+[labels]
+run = "Prediction"
+setup = "Setup env"
+build = "Build pkg"
+test = "Tests"
+
+[[runners]]
+id = "prediction"
+label = "First prediction"
+path = "first_prediction.py"
+description = "Saved input 3: prediction 6, target 1, error 5."
+
+[[resources]]
+label = "Project"
+path = "README.md"
+
+[[resources]]
+label = "Numerical implementation"
+path = "src/transformer_foundations_lab/numerics.py"
+
+[[resources]]
+label = "Implementation checkpoint"
+path = "docs/implementation/00_p00-foundations-implementation-and-learning/00-resume.md"

@@ -1,0 +1,8 @@
+title = "Tiny Vision Transformer"
+description = "Build a small image-patch encoder and train it from scratch on CIFAR-10."
+focus = "Start later with dataset splits and a checked image-to-patch walkthrough."
+notice = "Planned project: model implementation, training and Colab recovery have not started."
+
+[[resources]]
+label = "Project plan"
+path = "README.md"

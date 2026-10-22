@@ -1,0 +1,17 @@
+[project]
+name = "support-ticket-router"
+version = "0.1.0"
+description = "Support Ticket Router scaffold: embeddings, intent classification and tokenizer comparisons"
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+dependencies = []
+
+[build-system]
+requires = ["hatchling==1.27.0"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = ["pytest>=9,<10"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

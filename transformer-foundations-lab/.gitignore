@@ -1,0 +1,18 @@
+.venv/
+__pycache__/
+.pytest_cache/
+dist/
+runs/
+data/
+weights/
+checkpoints/
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+.env
+.env.*
+*.egg-info/
+
+# Personal implementation and understanding records.
+/docs/implementation/

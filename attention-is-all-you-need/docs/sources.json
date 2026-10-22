@@ -1,0 +1,267 @@
+{
+  "recorded_on": "2026-10-10",
+  "status": "video 1 attention and local checks complete; translation and hosted checks pending",
+  "downloader": "yt-dlp 2026.08.19",
+  "raw_policy": "caption files and text reading copies stay ignored in .sources/; no video or audio downloaded",
+  "reference": {
+    "repository": "https://github.com/priyammaz/PyTorch-Adventures",
+    "revision": "2f18a5470c4ef0a3d413dd7b18d07941f45779e9",
+    "license": "MIT",
+    "inspection": "repository tree, relevant READMEs, attention notebook and later translation Attention contract; video 1 implementation adapted under MIT",
+    "last_verified_on": "2026-10-12"
+  },
+  "videos": [
+    {
+      "order": 1,
+      "id": "JXY5CmiK3LI",
+      "title": "Attention is All You Need: Ditching Recurrence for Good!",
+      "channel": "Priyam Mazumdar",
+      "url": "https://www.youtube.com/watch?v=JXY5CmiK3LI",
+      "upload_date": "20250222",
+      "duration_seconds": 11296,
+      "caption_kind": "YouTube automatically generated English; en-orig and en tracks",
+      "captions": [
+        {
+          "path": ".sources/subtitles/JXY5CmiK3LI.en-orig.vtt",
+          "bytes": 1611841,
+          "sha256": "f1c79f8a20e2b05d06e16600ce1bbd60fd1cbad9a53cb1d5ff42f21e7351b235"
+        },
+        {
+          "path": ".sources/subtitles/JXY5CmiK3LI.en.vtt",
+          "bytes": 1611841,
+          "sha256": "f1c79f8a20e2b05d06e16600ce1bbd60fd1cbad9a53cb1d5ff42f21e7351b235"
+        }
+      ],
+      "local_reading_copy": ".sources/subtitles/JXY5CmiK3LI.transcript.txt",
+      "chapters": [
+        {
+          "start_seconds": 0,
+          "title": "Introduction"
+        },
+        {
+          "start_seconds": 199,
+          "title": "What is Attention"
+        },
+        {
+          "start_seconds": 1500,
+          "title": "Implementing Non-Learnable Attention"
+        },
+        {
+          "start_seconds": 2060,
+          "title": "nn.Linear on Multidimensional Tensors"
+        },
+        {
+          "start_seconds": 2325,
+          "title": "Simple Attention"
+        },
+        {
+          "start_seconds": 2690,
+          "title": "Moving to Multi-Head Attention"
+        },
+        {
+          "start_seconds": 3020,
+          "title": "(Inefficient) Multi-Head Attention"
+        },
+        {
+          "start_seconds": 3720,
+          "title": "Packing Linear Layers"
+        },
+        {
+          "start_seconds": 3990,
+          "title": "Multidimensional MatMul"
+        },
+        {
+          "start_seconds": 4160,
+          "title": "(Efficient) Multi-Head Attention"
+        },
+        {
+          "start_seconds": 5190,
+          "title": "Attention Masking (Pad Mask)"
+        },
+        {
+          "start_seconds": 7388,
+          "title": "Causal Masking"
+        },
+        {
+          "start_seconds": 7555,
+          "title": "Causal + Attention Masking"
+        },
+        {
+          "start_seconds": 8250,
+          "title": "Cross Attention (with masking)"
+        },
+        {
+          "start_seconds": 9670,
+          "title": "Flash Attention"
+        },
+        {
+          "start_seconds": 9880,
+          "title": "Full Attention Implementation (w/ Flash Attention)"
+        },
+        {
+          "start_seconds": 10860,
+          "title": "Wrap-up"
+        }
+      ]
+    },
+    {
+      "order": 2,
+      "id": "UkBggwQsbF8",
+      "title": "Prepping Data for Neural Machine Translation",
+      "channel": "Priyam Mazumdar",
+      "url": "https://www.youtube.com/watch?v=UkBggwQsbF8",
+      "upload_date": "20250225",
+      "duration_seconds": 5694,
+      "caption_kind": "YouTube automatically generated English; en-orig and en tracks",
+      "captions": [
+        {
+          "path": ".sources/subtitles/UkBggwQsbF8.en-orig.vtt",
+          "bytes": 794032,
+          "sha256": "50a85ef3c3eda18738179b3479064b6a689c4aac68ba29276180732163fd359e"
+        },
+        {
+          "path": ".sources/subtitles/UkBggwQsbF8.en.vtt",
+          "bytes": 794032,
+          "sha256": "50a85ef3c3eda18738179b3479064b6a689c4aac68ba29276180732163fd359e"
+        }
+      ],
+      "local_reading_copy": ".sources/subtitles/UkBggwQsbF8.transcript.txt",
+      "chapters": [
+        {
+          "start_seconds": 0,
+          "title": "Introduction"
+        },
+        {
+          "start_seconds": 120,
+          "title": "Training our Tokenizer"
+        },
+        {
+          "start_seconds": 1800,
+          "title": "Building Dataset"
+        },
+        {
+          "start_seconds": 2495,
+          "title": "Tokenizing Dataset"
+        },
+        {
+          "start_seconds": 3360,
+          "title": "Data Format for Training"
+        },
+        {
+          "start_seconds": 4115,
+          "title": "Writing the Data Collator"
+        },
+        {
+          "start_seconds": 5510,
+          "title": "Wrap up"
+        }
+      ]
+    },
+    {
+      "order": 3,
+      "id": "DOqg_QxInd8",
+      "title": "Build + Train the Transformer for Neural Machine Translation!",
+      "channel": "Priyam Mazumdar",
+      "url": "https://www.youtube.com/watch?v=DOqg_QxInd8",
+      "upload_date": "20250301",
+      "duration_seconds": 10066,
+      "caption_kind": "YouTube automatically generated English; en-orig and en tracks",
+      "captions": [
+        {
+          "path": ".sources/subtitles/DOqg_QxInd8.en-orig.vtt",
+          "bytes": 1369967,
+          "sha256": "218f9c68e7110403d75c42e3c67a1a19badde4bfcd9633fbacc535910914b824"
+        },
+        {
+          "path": ".sources/subtitles/DOqg_QxInd8.en.vtt",
+          "bytes": 1369967,
+          "sha256": "218f9c68e7110403d75c42e3c67a1a19badde4bfcd9633fbacc535910914b824"
+        }
+      ],
+      "local_reading_copy": ".sources/subtitles/DOqg_QxInd8.transcript.txt",
+      "chapters": [
+        {
+          "start_seconds": 0,
+          "title": "Introduction"
+        },
+        {
+          "start_seconds": 128,
+          "title": "Model Configuration"
+        },
+        {
+          "start_seconds": 380,
+          "title": "Permutation Invariance of Transformers"
+        },
+        {
+          "start_seconds": 700,
+          "title": "Sinusoidal Positional Embeddings"
+        },
+        {
+          "start_seconds": 1800,
+          "title": "Token Embeddings"
+        },
+        {
+          "start_seconds": 2220,
+          "title": "Attention"
+        },
+        {
+          "start_seconds": 3296,
+          "title": "Feed Forward"
+        },
+        {
+          "start_seconds": 3696,
+          "title": "Transformer Encoder"
+        },
+        {
+          "start_seconds": 4170,
+          "title": "Transformer Decoder"
+        },
+        {
+          "start_seconds": 4870,
+          "title": "Putting Together the Transformer"
+        },
+        {
+          "start_seconds": 5723,
+          "title": "Inference Function"
+        },
+        {
+          "start_seconds": 6085,
+          "title": "Debugging Inference"
+        },
+        {
+          "start_seconds": 6155,
+          "title": "Inference Function"
+        },
+        {
+          "start_seconds": 6878,
+          "title": "Training Loop"
+        },
+        {
+          "start_seconds": 9455,
+          "title": "Debugging Training Loop"
+        },
+        {
+          "start_seconds": 9831,
+          "title": "Success!"
+        },
+        {
+          "start_seconds": 9861,
+          "title": "Testing our Translation Model"
+        },
+        {
+          "start_seconds": 9915,
+          "title": "Wrap-up"
+        }
+      ]
+    }
+  ],
+  "implementation_reference": {
+    "revision": "2f18a5470c4ef0a3d413dd7b18d07941f45779e9",
+    "attention_notebook": "PyTorch for Transformers/Attention Mechanisms/Attention/attention_mechanism.ipynb",
+    "notebook_sha256": "854b284066fb12e715000fd2f10104bd7fd98117246720f5dafdb27be7de1a5a",
+    "translation_contract": "PyTorch for NLP/Seq2Seq for Neural Machine Translation/model.py",
+    "translation_model_sha256": "916e28b57e74c77f25c3fb7fc3b9805eb0941aa310152353560545511f53fc91",
+    "license": "MIT",
+    "implementation_notes": "SOURCES.md"
+  }
+}
