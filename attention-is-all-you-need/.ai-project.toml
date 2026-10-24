@@ -12,37 +12,37 @@ test = "Tests"
 [[runners]]
 id = "attention"
 label = "1 · Attention"
-path = "attention.py"
+path = "src/attention.py"
 description = "Video 1: self-attention, multiple heads, padding and causal masks, cross-attention."
 
 [[runners]]
 id = "tokenizer"
 label = "2 · Tokenizer"
-path = "tokenizer.py"
+path = "src/tokenizer.py"
 description = "Video 2: prepare the English and French tokenizers."
 
 [[runners]]
 id = "data"
 label = "2 · Prepare data"
-path = "prepare_data.py"
+path = "src/prepare_data.py"
 description = "Video 2: prepare parallel text, shifted targets and batches."
 
 [[runners]]
 id = "train"
 label = "3 · Training"
-path = "train.py"
+path = "src/train.py"
 description = "Video 3: train the translation model."
 
 [[runners]]
 id = "inference"
 label = "3 · Translation"
-path = "inference.py"
+path = "src/inference.py"
 description = "Video 3: translate English text into French."
 
 [[runners]]
 id = "bleu"
 label = "3 · BLEU evaluation"
-path = "compute_bleu.py"
+path = "src/compute_bleu.py"
 description = "Evaluate translations with BLEU."
 
 [[resources]]
@@ -66,9 +66,9 @@ label = "Colab Free profile"
 path = "configs/colab-free.json"
 
 [[resources]]
-label = "Attention concept notebook"
-path = "attention_mechanism.ipynb"
+label = "Google Colab runner"
+path = "notebooks/attention_colab.ipynb"
 
 [[resources]]
 label = "Matrix and plot helpers"
-path = "attention_visuals.py"
+path = "src/utils/attention_visuals.py"

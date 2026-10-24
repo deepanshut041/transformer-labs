@@ -8,7 +8,7 @@ import torch
 pytest.importorskip("matplotlib")
 pytest.importorskip("ipywidgets")
 
-from attention_visuals import (
+from utils.attention_visuals import (
     matrix_product_data,
     output_projection_example,
     projection_example,

@@ -13,18 +13,29 @@ import ipywidgets as widgets
 from IPython import get_ipython
 from IPython.display import display, clear_output
 
-from attention_is_all_you_need.attention import Attention, SingleHeadAttention, scaled_dot_product_attention, make_attention_mask
+from core.attention import Attention, SingleHeadAttention, scaled_dot_product_attention, make_attention_mask
 
 PALETTE = ["#168a91", "#8862bd", "#de844a", "#3664aa", "#bd4c67"]
-QA = Path(__file__).resolve().parent / "runs" / "attention-visuals"
+def _default_output_directory():
+    """Keep plots under project runs from source, root or notebook launches."""
+    candidates = [Path(__file__).resolve().parents[2], Path.cwd(), *Path.cwd().parents]
+    for candidate in candidates:
+        if (candidate / "pyproject.toml").is_file() and (candidate / "src/core/attention.py").is_file():
+            return candidate / "runs" / "attention-visuals"
+    return Path.cwd() / "runs" / "attention-visuals"
+
+
+QA = _default_output_directory()
 figure_names: list[str] = []
 _save_figures = True
 
 
-def configure(*, save_figures=True):
+def configure(*, save_figures=True, output_dir=None):
     """Set readable plot defaults and inline display in an active notebook kernel."""
-    global _save_figures
+    global _save_figures, QA
     _save_figures = save_figures
+    if output_dir is not None:
+        QA = Path(output_dir).expanduser().resolve()
     figure_names.clear()
     shell = get_ipython()
     if shell is not None:

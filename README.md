@@ -7,7 +7,7 @@ These are ordinary folders in the `ai_projects` repository. Each lab keeps its o
 | Lab | What I'm learning | Current state |
 | --- | --- | --- |
 | [Tokenization and Transformer Foundations](transformer-foundations-lab/README.md) | Numerical functions, gradients, tokenization and the path to a tiny encoder–decoder | Lesson 2 setup complete; `linear()` is next |
-| [Attention Is All You Need](attention-is-all-you-need/README.md) | Attention, masking and English-to-French encoder–decoder translation | Video 1 attention implemented and checked; data/model/training still pending |
+| [Attention Is All You Need](attention-is-all-you-need/README.md) | Attention, masking and English-to-French encoder–decoder translation | Attention implemented and checked; in-depth setup/attention tutorial available; data/model/training still pending |
 | [Semantic Notes Search](semantic-notes-search/README.md) | Text embeddings, encoder fine-tuning and retrieval by meaning | Planned; detailed README only, with a launcher resource profile |
 | [Tiny Vision Transformer](tiny-vision-transformer/README.md) | Image patches, positional embeddings and encoder classification | Planned; detailed README only, with a launcher resource profile |
 | [Support Ticket Router](support-ticket-router/README.md) | Train embeddings and an intent classifier; compare word tokenization, BPE and subwords | Standalone boilerplate prepared; explicit source-file inputs; data, models and training start later |

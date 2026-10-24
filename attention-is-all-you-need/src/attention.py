@@ -6,7 +6,7 @@ import argparse
 
 import torch
 
-from attention_is_all_you_need.attention import (
+from core.attention import (
     Attention, CrossAttention, MultiHeadAttention, SelfAttention,
     SelfAttentionEncoder, SingleHeadAttention, make_attention_mask,
     scaled_dot_product_attention,

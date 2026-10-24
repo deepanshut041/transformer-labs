@@ -18,6 +18,9 @@ video = [
   "sacrebleu",
 ]
 
+[project.scripts]
+attention-demo = "attention:main"
+
 [dependency-groups]
 dev = ["pytest>=9,<10"]
 
@@ -26,11 +29,15 @@ requires = ["hatchling==1.27.0"]
 build-backend = "hatchling.build"
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/attention_is_all_you_need"]
+only-include = ["src"]
+sources = ["src"]
+
+[tool.hatch.build.targets.sdist]
+include = ["src", "notebooks", "tests", "configs", "README.md", "LICENSE", "pyproject.toml", "uv.lock", ".python-version", ".gitignore", ".ai-project.toml", "docs/SOURCES.md", "docs/COLAB.md", "docs/sources.json"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
-pythonpath = ["."]
+pythonpath = ["src"]
 
 [tool.uv.sources]
 torch = [{ index = "pytorch-cpu", marker = "sys_platform == 'linux'" }]

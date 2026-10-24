@@ -6,7 +6,7 @@ import pytest
 import torch
 from torch import nn
 
-from attention_is_all_you_need.attention import (
+from core.attention import (
     Attention, CrossAttention, MultiHeadAttention, SelfAttention,
     SelfAttentionEncoder, SingleHeadAttention, scaled_dot_product_attention,
 )

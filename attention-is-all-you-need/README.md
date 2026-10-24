@@ -2,111 +2,94 @@
 
 I'm following Priyam Mazumdar's three videos to build an English-to-French Transformer in Python, from attention through to training and translation.
 
-Video 1 is implemented: attention without learned projections, single-head and multi-head attention, padding and causal masks, cross-attention, and the final efficient attention class. The code stays in Python files; [attention_mechanism.ipynb](attention_mechanism.ipynb) explains the basic concepts and runs the same code. Video 2's data preparation is next.
+Video 1 is implemented: attention without learned projections, single-head and multi-head attention, padding/causal masks, cross-attention and the reusable SDPA-backed class. Video 2's tokenizer/data preparation and Video 3's complete model/training remain pending. The tutorial explains the implementation. The notebook runs the Python project on Google Colab.
 
-## Run video 1
-
-From this project's directory:
-
-```bash
-uv run --frozen python attention.py
-```
-
-It prints the weighted-average example, attention directly on input vectors, attention matrices and final output tensors. Encoder/decoder outputs have shape `(3, 5, 9)`; cross-attention has shape `(3, 7, 9)`. The explicit and efficient paths are checked against each other, ending with `PASS`. These are attention-layer outputs with random weights; real translation comes after the later model and training videos.
-
-To run the checks:
-
-```bash
-uv run --frozen pytest -q
-```
-
-Include `--extra notebook` to check the matrix-example helpers too:
-
-```bash
-uv run --frozen --extra notebook pytest -q
-```
-
-To open the concept notebook:
-
-```bash
-uv run --frozen --extra notebook python -m ipykernel install --sys-prefix --name python3 --display-name "Attention (Python 3.12)"
-uv run --frozen --extra notebook jupyter lab attention_mechanism.ipynb
-```
-
-Use the Attention/Python kernel and run the cells from the top. Saved outputs include twenty-eight diagrams and plots, so the notebook is readable before rerunning. The matrix walkthroughs show `X × Xᵀ` and `A × X` before learned projections, then `X × W + b = Q/K/V`, `Q × Kᵀ`, scaling and softmax, `A × V`, concatenated heads and the output projection. Each multiplication highlights a row, a column and the resulting cell, with numbers and dimensions.
-
-All drawing code, control setup and extra visualization calculations live in [attention_visuals.py](attention_visuals.py). The notebook calls functions such as `vis.show_projection("Q")` and `vis.show_value_product()` alongside the attention examples. Four sets of controls select dot-product cells, query direction/temperature, heads and masks. Run the cells in Jupyter to use those controls. The attention classes stay in their own Python files.
-
-## Videos
-
-| Part | Video | What I'll work on |
-| --- | --- | --- |
-| 1 | [Attention](https://www.youtube.com/watch?v=JXY5CmiK3LI) | Self-attention, multiple heads, padding and causal masks, cross-attention |
-| 2 | [Data preparation](https://www.youtube.com/watch?v=UkBggwQsbF8) | English/French tokenizers, parallel text, shifted targets and batches |
-| 3 | [Transformer and training](https://www.youtube.com/watch?v=DOqg_QxInd8) | Embeddings, encoder, decoder, training, translation and BLEU evaluation |
-
-The [source notes](docs/SOURCES.md) have chapter timestamps and links to the paper and reference code.
-
-## Files
-
-The top-level files follow the video sequence. I'll keep the shared implementation in `src/attention_is_all_you_need/`.
+## Project structure
 
 ```text
-attention.py                    Attention
-attention_visuals.py            Matrix walkthroughs, plots and interactive controls
-tokenizer.py                    Tokenizer preparation
-prepare_data.py                 Dataset preparation
-train.py                        Training
-inference.py                    Translation
-compute_bleu.py                 BLEU evaluation
-src/attention_is_all_you_need/  Attention implementation; later model/data files
-configs/                        Draft local CPU and Colab Free settings
-tests/                          Attention checks and known answers for matrix examples
-attention_mechanism.ipynb        Basic concepts and worked examples
-docs/                           Sources and Colab setup
+src/
+  attention.py              Runnable attention demo
+  tokenizer.py              Future tokenizer preparation command
+  prepare_data.py           Future dataset preparation command
+  train.py                  Future training command
+  inference.py              Future translation command
+  compute_bleu.py           Future BLEU command
+  core/                     attention.py, model.py, config.py
+  data/                     tokenizer.py, dataset.py
+  training/                 trainer.py, checkpoint.py
+  utils/                    attention_visuals.py
+notebooks/
+  attention_colab.ipynb
 ```
 
-Datasets, tokenizer files, weights, checkpoints and run output go in the ignored `data/`, `artifacts/`, `weights/`, `checkpoints/` and `runs/` directories.
+The source groups are importable packages after setup. There is no additional project-named package below `src/`. The package installer exposes `core`, `data`, `training` and `utils`, plus the runnable modules directly under `src/`; the notebook and commands share those modules. Datasets, artifacts, weights, checkpoints and generated runs stay in ignored runtime directories.
 
-## Local setup
+## Set up and run attention
 
-From this directory:
+From this project directory:
 
 ```bash
 uv sync --frozen
+uv run --frozen attention-demo
+uv run --frozen pytest -q
 ```
 
-This installs the package, PyTorch, NumPy and development tools. Linux uses the locked CPU PyTorch build for these examples. The notebook tools are optional; the launcher doesn't need them. To add PyTorch and the tokenizer, dataset, training and evaluation libraries for the video build:
+The console command runs `src/attention.py`. The direct file command is equivalent:
 
 ```bash
-uv sync --frozen --extra video
+uv run --frozen python src/attention.py
 ```
 
-The configs are starting points for small CPU checks and Colab Free training. I'll check the model and memory use as I implement it.
+The demo prints the weighted-average example, attention directly on input vectors, attention matrices and final output tensors. Encoder/decoder attention outputs have shape `(3,5,9)` and cross-attention has shape `(3,7,9)`. Explicit and SDPA paths are compared, ending with `PASS`. These randomly initialized attention-layer outputs are component checks; real translation needs the later data/model/training implementation.
 
-## Colab
+The locked Python version is 3.12 and Linux uses CPU PyTorch for these examples. The draft profiles do not establish GPU fit or hosted training. Optional future video libraries are selected with `uv sync --frozen --extra video` when needed.
 
-The [Colab notes](docs/COLAB.md) cover uploading the source ZIP, installing the environment and running the Python files. I'll use notebook cells to launch the files and keep the implementation in this repo.
+## Run on Google Colab
+
+Open the [notebook](notebooks/attention_colab.ipynb) using **File → Upload notebook** in [Google Colab](https://colab.research.google.com/). Run its six code cells in order. Upload the matching source ZIP and manifest when prompted; both are under `.ai/exports/attention-is-all-you-need/` at workspace home.
+
+The runner verifies the archive and every file, installs pinned uv and locked Python 3.12.13 dependencies in an isolated environment, records runtime versions, runs `src/attention.py`, runs all 35 component/matrix checks, and downloads a result archive. CPU is sufficient. It stops on a failed command or skipped test. [Colab guidance](docs/COLAB.md) gives the complete transfer and execution steps.
+
+The former concept notebook has been removed; the twelve-lesson tutorial owns the explanations, worked maths and figures. [Graph helpers](src/utils/attention_visuals.py) remain reusable Python utilities for those figures and matrix checks. To run all 35 checks locally, including the visualization cases:
+
+```bash
+uv sync --frozen --extra notebook
+uv run --frozen --extra notebook pytest -q
+```
+
+The replacement runner is checked locally with uploaded source and a simulated Colab upload/download interface. Actual Google-hosted execution is still unverified.
+
+## Study the implemented project
+
+The [in-depth Attention tutorial](../../../docs/tutorials/projects/attention-is-all-you-need/attention-lab/v1/lessons/01-weighted-information.md) follows twelve ordered lessons from weighted retrieval through setup, tensor products, Q/K/V, softmax, heads, masks, cross-attention, the reusable API and gradients. Worked numbers, original figures, source traces and changed-case practice are accompanied by separate learning points, comparisons, source downloads and readiness records.
+
+The local [project documentation](docs/README.md) separates phase overviews from setup and attention implementation records. The [continuous attention notes](docs/implementation/01_attention-mechanism/02-notes-to-understanding.md) present the same authored explanations in one local view. Later lessons are added as those phases are implemented; learner understanding remains a separate review.
+
+## Source videos
+
+| Part | Video | Implementation scope |
+| --- | --- | --- |
+| 1 | [Attention](https://www.youtube.com/watch?v=JXY5CmiK3LI) | Implemented attention component; Colab execution notebook |
+| 2 | [Data preparation](https://www.youtube.com/watch?v=UkBggwQsbF8) | Planned English/French tokenizers, paired data, shifted labels and batches |
+| 3 | [Transformer and training](https://www.youtube.com/watch?v=DOqg_QxInd8) | Planned full encoder/decoder, training, translation, BLEU and recovery |
+
+[Source notes](docs/SOURCES.md) retain the reference revision, MIT attribution, captions and chapter timestamps. [Colab guidance](docs/COLAB.md) explains source transfer and the pending persistent-recovery contract. Actual hosted training/recovery remains unverified.
 
 ## Workspace launcher
 
-Select **P00 · Translation Transformer** in the workspace TUI, then choose the file for the video you're working through.
-
-From workspace home:
+Select **P00 · Translation Transformer** and its file in the TUI, or run from workspace home:
 
 ```bash
 ./ai run attention-is-all-you-need
 ./ai run attention-is-all-you-need --entrypoint inference
 ```
 
-The default file is `attention.py`, which runs the video 1 examples above. The other choices are `tokenizer`, `data`, `train`, `inference` and `bleu`; those later-video files still contain notes only. The launcher settings are in `.ai-project.toml`.
+The default launches `src/attention.py`. The other named commands still contain notes only. Their paths and notebook/utility resources are configured in `.ai-project.toml`; a placeholder's successful process exit is not a model result.
 
-## Reusing attention in the next videos
-
-Here `src` and `tgt` are floating-point tensors shaped `(batch, sequence, embedding_dimension)`. Their masks have shape `(batch, sequence)`, with True for real tokens.
+## Reuse the attention component
 
 ```python
-from attention import Attention
+from core.attention import Attention
 
 attention = Attention(embedding_dimension=9, num_heads=3, attn_dropout=0.0)
 encoder_output = attention(src, attention_mask=source_mask)
@@ -114,6 +97,6 @@ decoder_output = attention(tgt, attention_mask=target_mask, causal=True)
 cross_output = attention(src, tgt=tgt, attention_mask=source_mask)
 ```
 
-The final class, argument names and `q_proj`, `k_proj`, `v_proj`, `out_proj` names follow the video. The implementation is in [the attention module](src/attention_is_all_you_need/attention.py); `attention.py` exposes the same classes and adds the runnable demo. Inside the package, import it with `from .attention import Attention`.
+Inputs are floating `(batch,sequence,embedding_dimension)` tensors; masks are `(batch,source_sequence)` with True for allowed keys. Cross-attention takes queries from `tgt`, keys/values from `src`, and returns the target length. See [the core module](src/core/attention.py) for the complete public contract.
 
-For inspecting the calculation, use `Attention(..., fused_attn=False)` or request `need_weights=True` in a forward call. The default uses PyTorch SDPA. Its selected kernel depends on the device; the checked CPU run doesn't establish GPU FlashAttention performance. Source corrections and the MIT reference are recorded in [SOURCES.md](docs/SOURCES.md).
+The final `Attention` signature and `q_proj`, `k_proj`, `v_proj`, `out_proj` names are retained. Use `fused_attn=False` or `need_weights=True` to inspect explicit attention. The default uses PyTorch SDPA, whose selected backend depends on device/inputs; CPU checks do not establish GPU FlashAttention performance.
