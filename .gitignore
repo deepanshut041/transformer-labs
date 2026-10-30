@@ -1,0 +1,24 @@
+# Collection-wide runtime exclusions inherited from ai_projects.
+.venv/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+*.py[cod]
+*.log
+.env
+.env.*
+node_modules/
+dist/
+runs/
+data/
+weights/
+checkpoints/
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+build/
+*.egg-info/
+artifacts/
+.sources/
+.ipynb_checkpoints/

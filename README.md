@@ -1,8 +1,12 @@
 # Transformer Labs
 
+This collection is the independent `transformer-labs` Git repository, checked out at `ai_projects/projects/transformer-labs/` as a submodule of `ai_projects`. Its project folders are ordinary directories tracked by this collection. Shared tutorials and learning checkpoints remain in the umbrella Docs submodule. Local bare origin: workspace `.ai/repositories/transformer-labs.git`.
+
+Commit project changes in this collection first, then commit the updated collection pointer in `ai_projects`. Local commits are not automatically copied to the bare origin; run `git push origin main` in this collection before another checkout needs the new commit. No external hosting is configured.
+
 I'm using these small projects to understand how text and image inputs become tokens, how embeddings and positions represent them, and how encoder and decoder blocks learn useful behavior.
 
-These are ordinary folders in the `ai_projects` repository. Each lab keeps its own Python package, environment, notebook and implementation notes when needed; none is a nested Git repository or submodule.
+Each lab is an ordinary folder in this collection repository and keeps its own Python package, environment, notebook and implementation notes when needed. Individual labs are not nested repositories or submodules.
 
 | Lab | What I'm learning | Current state |
 | --- | --- | --- |
