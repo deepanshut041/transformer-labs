@@ -50,7 +50,7 @@ Open the [notebook](notebooks/attention_colab.ipynb) using **File → Upload not
 
 The runner verifies the archive and every file, installs pinned uv and locked Python 3.12.13 dependencies in an isolated environment, records runtime versions, runs `src/attention.py`, runs all 35 component/matrix checks, and downloads a result archive. CPU is sufficient. It stops on a failed command or skipped test. [Colab guidance](docs/COLAB.md) gives the complete transfer and execution steps.
 
-The former concept notebook has been removed; the twelve-lesson tutorial owns the explanations, worked maths and figures. [Graph helpers](src/utils/attention_visuals.py) remain reusable Python utilities for those figures and matrix checks. To run all 35 checks locally, including the visualization cases:
+The former concept notebook has been removed; the attention tutorial owns the explanations, worked maths and code. [Graph helpers](src/utils/attention_visuals.py) remain reusable Python utilities for those figures and matrix checks. To run all 35 checks locally, including the visualization cases:
 
 ```bash
 uv sync --frozen --extra notebook
@@ -61,7 +61,7 @@ The replacement runner is checked locally with uploaded source and a simulated C
 
 ## Study the implemented project
 
-The [in-depth Attention tutorial](../../../docs/tutorials/projects/attention-is-all-you-need/attention-lab/v1/lessons/01-weighted-information.md) follows twelve ordered lessons from weighted retrieval through setup, tensor products, Q/K/V, softmax, heads, masks, cross-attention, the reusable API and gradients. Worked numbers, original figures, source traces and changed-case practice are accompanied by separate learning points, comparisons, source downloads and readiness records.
+The [Attention tutorial](../../../docs/tutorials/projects/attention-is-all-you-need/attention-lab/v1/lessons/01-weighted-information.md) begins with why a position needs information from others. Eleven connected steps follow one numerical example through weighted retrieval, comparisons, projections, heads, masks, cross-attention, learning and the complete project class. Code blocks include the helpers they call. Setup is a separate run reference. The rewritten text was approved on 24 October 2026. Eleven new captioned companions now follow the same route in the local notes and tutorial chapters.
 
 The local [project documentation](docs/README.md) separates phase overviews from setup and attention implementation records. The [continuous attention notes](docs/implementation/01_attention-mechanism/02-notes-to-understanding.md) present the same authored explanations in one local view. Later lessons are added as those phases are implemented; learner understanding remains a separate review.
 

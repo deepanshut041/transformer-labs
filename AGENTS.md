@@ -1,8 +1,8 @@
 # Transformer Labs repository ownership
 
-This collection is the independent `transformer-labs` Git repository, checked out at `ai_projects/projects/transformer-labs/` as a submodule of `ai_projects`. Its project folders are ordinary directories tracked by this collection. Shared tutorials and learning checkpoints remain in the umbrella Docs submodule. Local bare origin: workspace `.ai/repositories/transformer-labs.git`.
+This collection is the independent `transformer-labs` Git repository, checked out at `ai_projects/projects/transformer-labs/` as a submodule of `ai_projects`. Its project folders are ordinary directories tracked by this collection. Shared tutorials and learning checkpoints remain in the umbrella Docs folder in ai_projects. Local bare origin: workspace `.ai/repositories/transformer-labs.git`.
 
-Commit project changes in this collection first, then commit the updated collection pointer in `ai_projects`. Local commits are not automatically copied to the bare origin; run `git push origin main` in this collection before another checkout needs the new commit. No external hosting is configured.
+Commit project changes in this collection first, then commit the updated collection pointer in `ai_projects`. Local commits are not automatically copied to the bare origin; run `git push origin main` in this collection before another checkout needs the new commit. Public repository: https://github.com/deepanshut041/transformer-labs. Local bare origins are retained as local-origin after publication.
 
 Read the project README and project-local AGENTS.md before editing. Preserve existing source, local changes, private study notes, data, models, environments and run evidence. Do not create nested Git repositories or submodules for individual projects.
 
